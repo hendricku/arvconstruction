@@ -81,14 +81,7 @@ const categories = [
   },
 ];
 
-// FIX 1: Define a type for the page props to ensure type safety.
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
