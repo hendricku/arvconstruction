@@ -81,9 +81,10 @@ const categories = [
   },
 ];
 
-type PageProps = { params: { slug: string } };
+// The type alias `PageProps` was removed to avoid conflict with Next.js's internal types.
+// The type is now defined inline in the component's signature.
 
-export default async function CategoryDetail({ params }: PageProps) {
+export default async function CategoryDetail({ params }: { params: { slug: string } }) {
   const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
@@ -176,7 +177,7 @@ export default async function CategoryDetail({ params }: PageProps) {
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
                 <p className="text-gray-700 italic">
-                  &quot;{category.testimonial.text}&quot;
+                  "{category.testimonial.text}"
                 </p>
                 <div className="flex items-center gap-3 mt-2">
                   <Image
