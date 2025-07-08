@@ -139,7 +139,7 @@ This project involves the repainting of interior spaces and various repair works
           {/* Testimonial card */}
           <div className="flex flex-col gap-8">
             <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-              <p className="text-gray-700 italic">"{category.testimonial?.text}Solid ganda ng building ng ARV Construction  pati Paintings sheshhh"</p>
+              <p className="text-gray-700 italic">&quot;{category.testimonial?.text}Solid ganda ng building ng ARV Construction  pati Paintings sheshhh&quot;</p>
               <div className="flex items-center gap-3 mt-2">
                 <Image
                   src={category.testimonial?.avatar || "/daniel.jpg"}
