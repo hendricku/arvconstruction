@@ -17,7 +17,7 @@ const categories = [
     ],
     longDesc: `This project involves the construction of a new Intensive Intervention and Support Facility under Lot No. 2 of the Regional Rehabilitation Center for Youth (RRCY) development in Urayong, Bauang, La Union. The facility is designed to provide a structured, secure, and rehabilitative environment for children in conflict with the law. It will include specialized spaces for counseling, education, skills training, and psychosocial support, aligned with the Department of Social Welfare and Development&apos;s (DSWD) standards.
 
-This re-advertised project aims to ensure the timely completion of critical infrastructure that will enhance the delivery of restorative and developmental services to youth beneficiaries across the region.`,
+This re-advertised project aims to ensure th timely completion of critical infrastructure that will enhance the delivery of restorative and developmental services to youth beneficiaries across the region.`,
 features: [
   "Counseling rooms",
   "Classrooms and training areas",
