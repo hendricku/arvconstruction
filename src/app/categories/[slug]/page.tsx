@@ -27,7 +27,6 @@ This re-advertised project aims to ensure th timely completion of critical infra
       "Energy-saving design",
     ],
     testimonial: {
-      // FIXED: The full text is now here as the single source of truth.
       text: "Solid ganda ng building ng ARV Construction pati Paintings sheshhh",
       author: "Daniel Cobrado",
       avatar: "/daniel.jpg",
@@ -59,9 +58,11 @@ This re-advertised project aims to ensure th timely completion of critical infra
   },
 ];
 
-type Props = { params: { slug: string } };
+// FIX: Removed the separate 'Props' type alias.
+// type Props = { params: { slug: string } };
 
-export default function CategoryDetail({ params }: Props) {
+// FIX: Defined the prop types inline in the function signature.
+export default function CategoryDetail({ params }: { params: { slug: string } }) {
   const category = categories.find((c) => c.slug === params.slug);
   if (!category) return notFound();
 
@@ -142,9 +143,8 @@ export default function CategoryDetail({ params }: Props) {
           {/* Testimonial card */}
           <div className="flex flex-col gap-8">
             <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-              {/* FIX #2: Replaced hardcoded text and used " for both quotes. */}
               <p className="text-gray-700 italic">
-                &quot;{category.testimonial?.text}&quot;
+                "{category.testimonial?.text}"
               </p>
               <div className="flex items-center gap-3 mt-2">
                 <Image
@@ -154,7 +154,6 @@ export default function CategoryDetail({ params }: Props) {
                   height={40}
                   className="rounded-full"
                 />
-                {/* FIX #3: Removed hardcoded name to prevent duplication. */}
                 <span className="font-semibold text-gray-900">{category.testimonial?.author}</span>
               </div>
             </div>
