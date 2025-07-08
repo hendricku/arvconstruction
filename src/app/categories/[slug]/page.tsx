@@ -59,14 +59,9 @@ This re-advertised project aims to ensure th timely completion of critical infra
   },
 ];
 
-// FIX #1: Define a specific type for the component's props.
-type CategoryDetailProps = {
-  params: {
-    slug: string;
-  };
-};
+type Props = { params: { slug: string } };
 
-export default function CategoryDetail({ params }: CategoryDetailProps) {
+export default function CategoryDetail({ params }: Props) {
   const category = categories.find((c) => c.slug === params.slug);
   if (!category) return notFound();
 
