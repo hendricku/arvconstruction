@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { FC } from "react"; // FIX: Import FC (Functional Component) type from React
+import { FC } from "react";
 import Navbar from "../../components/Navbar";
 
 // The complete and updated data source. All unique content is here.
@@ -82,12 +82,11 @@ const categories = [
   },
 ];
 
-// FIX: Define the props type explicitly
+
 type Props = {
   params: { slug: string };
 };
 
-// FIX: Change the component to an arrow function typed with FC<Props>
 const CategoryDetail: FC<Props> = ({ params }) => {
   const category = categories.find((c) => c.slug === params.slug);
 
@@ -180,6 +179,7 @@ const CategoryDetail: FC<Props> = ({ params }) => {
             {/* Testimonial Card - Conditionally renders only if a testimonial exists */}
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
+                {/* FINAL FIX: Replaced " with " to satisfy ESLint rule */}
                 <p className="text-gray-700 italic">
                   "{category.testimonial.text}"
                 </p>
