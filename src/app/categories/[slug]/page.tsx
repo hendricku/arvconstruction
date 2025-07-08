@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { FC } from "react";
 import Navbar from "../../components/Navbar";
 
 // The complete and updated data source. All unique content is here.
