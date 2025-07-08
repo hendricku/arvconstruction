@@ -180,9 +180,9 @@ export default async function Page({ params }: PageProps) {
             {/* Testimonial Card - Conditionally renders only if a testimonial exists */}
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-                {/* FIX 2: Escaped double quotes to resolve react/no-unescaped-entities */}
+                {/* FIX 2: Using template literal to avoid unescaped entities error. */}
                 <p className="text-gray-700 italic">
-                  "{category.testimonial.text}"
+                  {`"${category.testimonial.text}"`}
                 </p>
                 <div className="flex items-center gap-3 mt-2">
                   <Image
