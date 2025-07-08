@@ -81,8 +81,14 @@ const categories = [
   },
 ];
 
+// FIX: Define a type for the page props to ensure type safety and resolve the error.
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: PageProps) {
   const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
@@ -175,8 +181,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
                 <p className="text-gray-700 italic">
-                  {/* FIX: Escaped double quotes to resolve react/no-unescaped-entities */}
-                  &quot;{category.testimonial.text}&quot;
+                  "{category.testimonial.text}"
                 </p>
                 <div className="flex items-center gap-3 mt-2">
                   <Image
