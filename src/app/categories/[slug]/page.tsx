@@ -27,7 +27,8 @@ This re-advertised project aims to ensure th timely completion of critical infra
       "Energy-saving design",
     ],
     testimonial: {
-      text: "Solid ganda ng building ng ARV Construction ",
+      // FIXED: The full text is now here as the single source of truth.
+      text: "Solid ganda ng building ng ARV Construction pati Paintings sheshhh",
       author: "Daniel Cobrado",
       avatar: "/daniel.jpg",
     },
@@ -58,14 +59,13 @@ This re-advertised project aims to ensure th timely completion of critical infra
   },
 ];
 
-// 1. Define a type for the component's props
+// FIX #1: Define a specific type for the component's props.
 type CategoryDetailProps = {
   params: {
     slug: string;
   };
 };
 
-// 2. Use the new type for your component's props
 export default function CategoryDetail({ params }: CategoryDetailProps) {
   const category = categories.find((c) => c.slug === params.slug);
   if (!category) return notFound();
@@ -74,7 +74,6 @@ export default function CategoryDetail({ params }: CategoryDetailProps) {
     <>
       <Navbar />
       <div className="w-full max-w-6xl mx-auto mt-16 px-4">
-        {/* ... rest of your component code remains the same ... */}
         <div className="flex flex-col md:flex-row md:items-start gap-8 mb-8">
           <div className="flex-1">
             <span className="text-emerald-500 font-semibold text-sm flex items-center gap-2 mb-2">
@@ -132,8 +131,8 @@ export default function CategoryDetail({ params }: CategoryDetailProps) {
               <p className="text-gray-700 mb-4">{category.longDesc}</p>
               <h2 className="text-lg text-gray-900 font-semibold mb-4">Exquisite Architectural Design</h2>
               <p className="text-gray-700 mb-4">
-This project involves the repainting of interior spaces and various repair works at the Convention Hall of the BSP La Union Branch Office in San Fernando City. The improvements aim to enhance the halls appearance, functionality, and overall condition, ensuring a cleaner, more welcoming, and well-maintained environment for official functions and community use.
-</p>
+                This project involves the repainting of interior spaces and various repair works at the Convention Hall of the BSP La Union Branch Office in San Fernando City. The improvements aim to enhance the halls appearance, functionality, and overall condition, ensuring a cleaner, more welcoming, and well-maintained environment for official functions and community use.
+              </p>
 
               <h2 className="text-lg font-semibold mb-4">What this property offers</h2>
               <div className="flex flex-wrap gap-3">
@@ -148,7 +147,10 @@ This project involves the repainting of interior spaces and various repair works
           {/* Testimonial card */}
           <div className="flex flex-col gap-8">
             <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-              <p className="text-gray-700 italic">"{category.testimonial?.text}Solid ganda ng building ng ARV Construction  pati Paintings sheshhh"</p>
+              {/* FIX #2: Replaced hardcoded text and used " for both quotes. */}
+              <p className="text-gray-700 italic">
+                "{category.testimonial?.text}"
+              </p>
               <div className="flex items-center gap-3 mt-2">
                 <Image
                   src={category.testimonial?.avatar || "/daniel.jpg"}
@@ -157,7 +159,8 @@ This project involves the repainting of interior spaces and various repair works
                   height={40}
                   className="rounded-full"
                 />
-                <span className="font-semibold text-gray-900">{category.testimonial?.author} Daniel Cobrado</span>
+                {/* FIX #3: Removed hardcoded name to prevent duplication. */}
+                <span className="font-semibold text-gray-900">{category.testimonial?.author}</span>
               </div>
             </div>
           </div>
