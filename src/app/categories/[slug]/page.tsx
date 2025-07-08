@@ -82,12 +82,7 @@ const categories = [
   },
 ];
 
-
-type Props = {
-  params: { slug: string };
-};
-
-const CategoryDetail: FC<Props> = ({ params }) => {
+export default async function CategoryDetail({ params }: { params: { slug: string } }) {
   const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
@@ -199,6 +194,4 @@ const CategoryDetail: FC<Props> = ({ params }) => {
       </div>
     </>
   );
-};
-
-export default CategoryDetail;
+}
