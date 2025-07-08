@@ -81,7 +81,7 @@ const categories = [
   },
 ];
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default function Page({ params }: any) {
   const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
