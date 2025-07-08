@@ -81,22 +81,32 @@ const categories = [
   },
 ];
 
-// This function is ESSENTIAL. It tells Next.js what pages to build.
+// This is still best practice for static routes.
 export async function generateStaticParams() {
   return categories.map((category) => ({
     slug: category.slug,
   }));
 }
 
-// THE FIX: Using a simple inline type for params. With generateStaticParams present,
-// this is the cleanest way and should allow TypeScript to infer correctly.
-export default function Page({ params }: { params: { slug: string } }) {
+// FIX #1: THE DEFINITIVE TYPE FIX
+// The correct Page Props type requires both `params` and `searchParams`
+// to fully satisfy the internal Next.js `PageProps` constraint.
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default function Page({ params }: Props) {
   const category = categories.find((c) => c.slug === params.slug);
 
+  // FIX #2: THE CRITICAL RUNTIME FIX
+  // If no category is found, call notFound() which throws an error and stops
+  // the component from rendering. This prevents a crash.
   if (!category) {
     notFound();
   }
 
+  // The code below will only run if a category was found.
   return (
     <>
       <Navbar />
