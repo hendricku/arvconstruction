@@ -15,17 +15,17 @@ const categories = [
       { title: "Smart home access", desc: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." },
       { title: "Energy efficient", desc: "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." },
     ],
-    longDesc: `This project involves the construction of a new Intensive Intervention and Support Facility under Lot No. 2 of the Regional Rehabilitation Center for Youth (RRCY) development in Urayong, Bauang, La Union. The facility is designed to provide a structured, secure, and rehabilitative environment for children in conflict with the law. It will include specialized spaces for counseling, education, skills training, and psychosocial support, aligned with the Department of Social Welfare and Development&apos;s (DSWD) standards.
+    longDesc: `This project involves the construction of a new Intensive Intervention and Support Facility under Lot No. 2 of the Regional Rehabilitation Center for Youth (RRCY) development in Urayong, Bauang, La Union. The facility is designed to provide a structured, secure, and rehabilitative environment for children in conflict with the law. It will include specialized spaces for counseling, education, skills training, and psychosocial support, aligned with the Department of Social Welfare and Development's (DSWD) standards.
 
 This re-advertised project aims to ensure th timely completion of critical infrastructure that will enhance the delivery of restorative and developmental services to youth beneficiaries across the region.`,
-features: [
-  "Counseling rooms",
-  "Classrooms and training areas",
-  "Safe and secure spaces",
-  "Sleeping quarters",
-  "Play and outdoor areas",
-  "Energy-saving design",
-],
+    features: [
+      "Counseling rooms",
+      "Classrooms and training areas",
+      "Safe and secure spaces",
+      "Sleeping quarters",
+      "Play and outdoor areas",
+      "Energy-saving design",
+    ],
     testimonial: {
       text: "Solid ganda ng building ng ARV Construction ",
       author: "Daniel Cobrado",
@@ -58,7 +58,15 @@ features: [
   },
 ];
 
-export default function CategoryDetail({ params }: { params: { slug: string } }) {
+// 1. Define a type for the component's props
+type CategoryDetailProps = {
+  params: {
+    slug: string;
+  };
+};
+
+// 2. Use the new type for your component's props
+export default function CategoryDetail({ params }: CategoryDetailProps) {
   const category = categories.find((c) => c.slug === params.slug);
   if (!category) return notFound();
 
@@ -66,6 +74,7 @@ export default function CategoryDetail({ params }: { params: { slug: string } })
     <>
       <Navbar />
       <div className="w-full max-w-6xl mx-auto mt-16 px-4">
+        {/* ... rest of your component code remains the same ... */}
         <div className="flex flex-col md:flex-row md:items-start gap-8 mb-8">
           <div className="flex-1">
             <span className="text-emerald-500 font-semibold text-sm flex items-center gap-2 mb-2">
@@ -139,7 +148,7 @@ This project involves the repainting of interior spaces and various repair works
           {/* Testimonial card */}
           <div className="flex flex-col gap-8">
             <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-              <p className="text-gray-700 italic">&quot;{category.testimonial?.text}Solid ganda ng building ng ARV Construction  pati Paintings sheshhh&quot;</p>
+              <p className="text-gray-700 italic">"{category.testimonial?.text}Solid ganda ng building ng ARV Construction  pati Paintings sheshhh"</p>
               <div className="flex items-center gap-3 mt-2">
                 <Image
                   src={category.testimonial?.avatar || "/daniel.jpg"}
@@ -156,4 +165,4 @@ This project involves the repainting of interior spaces and various repair works
       </div>
     </>
   );
-} 
+}
