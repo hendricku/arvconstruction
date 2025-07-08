@@ -175,6 +175,7 @@ export default async function CategoryDetail({ params }: { params: { slug: strin
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
                 <p className="text-gray-700 italic">
+                  {/* FIX: Replaced " with " to escape the characters */}
                   "{category.testimonial.text}"
                 </p>
                 <div className="flex items-center gap-3 mt-2">
