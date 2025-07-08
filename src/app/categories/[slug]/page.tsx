@@ -81,8 +81,6 @@ const categories = [
   },
 ];
 
-// The type alias `PageProps` was removed to avoid conflict with Next.js's internal types.
-// The type is now defined inline in the component's signature.
 
 export default async function CategoryDetail({ params }: { params: { slug: string } }) {
   const category = categories.find((c) => c.slug === params.slug);
