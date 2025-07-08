@@ -81,8 +81,15 @@ const categories = [
   },
 ];
 
-// FIX 1: Define a clear and separate type for the page props.
-// This resolves the complex type error by removing ambiguity for the Next.js compiler.
+//====== THE FIX IS HERE ======//
+// This function tells Next.js which slugs to pre-render at build time.
+// By providing this, we resolve the type ambiguity that causes the error.
+export async function generateStaticParams() {
+  return categories.map((category) => ({
+    slug: category.slug,
+  }));
+}
+
 type Props = {
   params: {
     slug: string;
@@ -181,7 +188,6 @@ export default function Page({ params }: Props) {
             {/* Testimonial Card - Conditionally renders only if a testimonial exists */}
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-                {/* FIX 2: Using template literal to avoid unescaped entities error. */}
                 <p className="text-gray-700 italic">
                   {`"${category.testimonial.text}"`}
                 </p>
