@@ -96,7 +96,13 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default function Page({ params }: Props) {
+export default function Page({
+  params,
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
   const category = categories.find((c) => c.slug === params.slug);
 
   // FIX #2: THE CRITICAL RUNTIME FIX
