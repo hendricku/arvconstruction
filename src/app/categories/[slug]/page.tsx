@@ -179,9 +179,8 @@ const CategoryDetail: FC<Props> = ({ params }) => {
             {/* Testimonial Card - Conditionally renders only if a testimonial exists */}
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-                {/* FINAL, CORRECTED FIX: Replaced " with " */}
                 <p className="text-gray-700 italic">
-                  "{category.testimonial.text}"
+                  &quot;{category.testimonial.text}&quot;
                 </p>
                 <div className="flex items-center gap-3 mt-2">
                   <Image
