@@ -56,7 +56,7 @@ export default function CategoriesSection() {
             <span className="whitespace-nowrap">with expert services.</span>
           </h2>
           <p className="text-gray-500 text-lg mb-4">
-           lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quibusdam ipsam eos deserunt sunt ad tempore, animi natus distinctio quisquam dolore blanditiis voluptates quo voluptate, consequuntur reiciendis dignissimos? Delectus, dolore.
+           lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum loremm
           </p>
           <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full w-fit transition mb-4">
             View Properties
