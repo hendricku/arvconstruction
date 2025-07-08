@@ -81,7 +81,7 @@ const categories = [
   },
 ];
 
-// FIX: Define a type for the page props to ensure type safety and resolve the error.
+// FIX 1: Define a type for the page props to ensure type safety.
 type PageProps = {
   params: {
     slug: string;
@@ -180,6 +180,7 @@ export default async function Page({ params }: PageProps) {
             {/* Testimonial Card - Conditionally renders only if a testimonial exists */}
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
+                {/* FIX 2: Escaped double quotes to resolve react/no-unescaped-entities */}
                 <p className="text-gray-700 italic">
                   "{category.testimonial.text}"
                 </p>
