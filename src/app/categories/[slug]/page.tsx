@@ -81,7 +81,15 @@ const categories = [
   },
 ];
 
-export default function Page({ params }: any) {
+// FIX 1: Define a clear and separate type for the page props.
+// This resolves the complex type error by removing ambiguity for the Next.js compiler.
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export default function Page({ params }: Props) {
   const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
