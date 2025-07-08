@@ -109,7 +109,7 @@ export default function CategoryDetail({ params }: { params: { slug: string } })
               <ul className="space-y-4">
                 {category.details?.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="mt-1">{idx === 0 ? '🏡' : idx === 1 ? '🔑' : '🌱'}</span>
+                    <span className="mt-1">{idx === 0 ? "🏡" : idx === 1 ? "🔑" : "🌱"}</span>
                     <div>
                       <div className="font-semibold text-gray-900">{item.title}</div>
                       <div className="text-gray-500 text-sm">{item.desc}</div>
@@ -123,7 +123,7 @@ export default function CategoryDetail({ params }: { params: { slug: string } })
               <p className="text-gray-700 mb-4">{category.longDesc}</p>
               <h2 className="text-lg text-gray-900 font-semibold mb-4">Exquisite Architectural Design</h2>
               <p className="text-gray-700 mb-4">
-This project involves the repainting of interior spaces and various repair works at the Convention Hall of the BSP La Union Branch Office in San Fernando City. The improvements aim to enhance the hall's appearance, functionality, and overall condition, ensuring a cleaner, more welcoming, and well-maintained environment for official functions and community use.
+This project involves the repainting of interior spaces and various repair works at the Convention Hall of the BSP La Union Branch Office in San Fernando City. The improvements aim to enhance the halls appearance, functionality, and overall condition, ensuring a cleaner, more welcoming, and well-maintained environment for official functions and community use.
 </p>
 
               <h2 className="text-lg font-semibold mb-4">What this property offers</h2>
