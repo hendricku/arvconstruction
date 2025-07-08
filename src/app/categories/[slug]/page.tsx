@@ -81,26 +81,20 @@ const categories = [
   },
 ];
 
-//====== THE FIX IS HERE ======//
-// This function tells Next.js which slugs to pre-render at build time.
-// By providing this, we resolve the type ambiguity that causes the error.
+// This function is ESSENTIAL. It tells Next.js what pages to build.
 export async function generateStaticParams() {
   return categories.map((category) => ({
     slug: category.slug,
   }));
 }
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export default function Page({ params }: Props) {
+// THE FIX: Using a simple inline type for params. With generateStaticParams present,
+// this is the cleanest way and should allow TypeScript to infer correctly.
+export default function Page({ params }: { params: { slug: string } }) {
   const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
-    return notFound();
+    notFound();
   }
 
   return (
@@ -146,7 +140,6 @@ export default function Page({ params }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           <div className="md:col-span-2">
             
-            {/* Project Details Card */}
             {category.details && category.details.length > 0 && (
               <div className="bg-white rounded-2xl shadow p-6 mb-8">
                 <h2 className="text-lg text-gray-900 font-semibold mb-4">Project Details</h2>
@@ -164,7 +157,6 @@ export default function Page({ params }: Props) {
               </div>
             )}
 
-            {/* Description Card */}
             <div className="bg-white rounded-2xl shadow p-6 mb-8">
               <h2 className="text-lg text-gray-900 font-semibold mb-4">About This Project</h2>
               <p className="text-gray-700 mb-6">{category.longDesc}</p>
@@ -185,7 +177,6 @@ export default function Page({ params }: Props) {
           </div>
           
           <div className="flex flex-col gap-8">
-            {/* Testimonial Card - Conditionally renders only if a testimonial exists */}
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
                 <p className="text-gray-700 italic">
