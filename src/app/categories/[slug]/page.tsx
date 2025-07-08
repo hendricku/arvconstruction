@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { FC } from "react"; // FIX: Import FC (Functional Component) type from React
 import Navbar from "../../components/Navbar";
 
 // The complete and updated data source. All unique content is here.
@@ -81,8 +82,13 @@ const categories = [
   },
 ];
 
+// FIX: Define the props type explicitly
+type Props = {
+  params: { slug: string };
+};
 
-export default function CategoryDetail({ params }: { params: { slug: string } }) {
+// FIX: Change the component to an arrow function typed with FC<Props>
+const CategoryDetail: FC<Props> = ({ params }) => {
   const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
@@ -175,7 +181,7 @@ export default function CategoryDetail({ params }: { params: { slug: string } })
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
                 <p className="text-gray-700 italic">
-                  &quot;{category.testimonial.text}&quot;
+                  "{category.testimonial.text}"
                 </p>
                 <div className="flex items-center gap-3 mt-2">
                   <Image
@@ -194,4 +200,6 @@ export default function CategoryDetail({ params }: { params: { slug: string } })
       </div>
     </>
   );
-}
+};
+
+export default CategoryDetail;
