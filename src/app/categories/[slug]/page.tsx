@@ -174,9 +174,8 @@ export default function CategoryDetail({ params }: { params: { slug: string } })
             {/* Testimonial Card - Conditionally renders only if a testimonial exists */}
             {category.testimonial && (
               <div className="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
-                {/* FIX: Replaced literal " with " to satisfy ESLint rule */}
                 <p className="text-gray-700 italic">
-                  "{category.testimonial.text}"
+                  &quot;{category.testimonial.text}&quot;
                 </p>
                 <div className="flex items-center gap-3 mt-2">
                   <Image
