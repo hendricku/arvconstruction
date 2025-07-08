@@ -81,9 +81,7 @@ const categories = [
   },
 ];
 
-type PageProps = {
-  params: { slug: string }
-};
+type PageProps = { params: { slug: string } };
 
 export default async function CategoryDetail({ params }: PageProps) {
   const category = categories.find((c) => c.slug === params.slug);
