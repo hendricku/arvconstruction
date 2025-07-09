@@ -88,20 +88,10 @@ export async function generateStaticParams() {
   }));
 }
 
-// FIX #1: THE DEFINITIVE TYPE FIX
-// The correct Page Props type requires both `params` and `searchParams`
-// to fully satisfy the internal Next.js `PageProps` constraint.
-type Props = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
 export default async function Page({
   params,
-  searchParams,
 }: {
   params: Promise<{ slug: string }>;
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { slug } = await params;
   const category = categories.find((c) => c.slug === slug);
