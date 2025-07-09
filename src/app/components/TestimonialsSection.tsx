@@ -10,10 +10,10 @@ const testimonials = [
     img: "/daniel.jpg",
   },
   {
-    text: "Sheshhhhhhhhh crazy ",
-    author: "Daniel Cobrado",
+    text: "Sheshhhhhhhhh crazy angassss",
+    author: "Jing Viray",
     role: "Client",
-    img: "/daniel.jpg",
+    img: "/jing.jpg",
   },
 
 ];
