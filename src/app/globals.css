@@ -32,6 +32,10 @@ body {
   font-family: 'Bricolage Grotesque', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .bg-grid {
   background-color: #fff;
   background-image:

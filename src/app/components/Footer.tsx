@@ -9,9 +9,11 @@ export default function Footer() {
           <span className="text-gray-400 text-sm">San Fernando, La Union</span>
         </div>
         <div className="flex gap-6 text-sm">
-          <a href="#" className="hover:text-emerald-400 transition">Home</a>
-          <a href="#" className="hover:text-emerald-400 transition">Projects</a>
-          <a href="#" className="hover:text-emerald-400 transition">Contact</a>
+          <a href="/" className="hover:text-emerald-400 transition">Home</a>
+          <a href="/Properties" className="hover:text-emerald-400 transition">Properties</a>
+          <a href="/#testimonials" className="hover:text-emerald-400 transition">Testimonials</a>
+          <a href="/Contacts" className="hover:text-emerald-400 transition">Contact</a>
+          
         </div>
         <div className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} ARV Construction. All rights reserved.</div>
       </div>
