@@ -72,7 +72,7 @@ export default function CategoriesSection() {
                     </div>
                     <div>
                       <div className="text-grey text-lg font-semibold mb-1 drop-shadow">{categories[i].title}</div>
-                      <div className="text-grey text-sm drop-shadow max-w-xs">{categories[i].desc}</div>
+                      {/* <div className="text-grey text-sm drop-shadow max-w-xs">{categories[i].desc}</div> */}
                     </div>
                   </div>
                 </motion.div>
