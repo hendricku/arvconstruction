@@ -96,14 +96,15 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default function Page({
+export default async function Page({
   params,
   searchParams,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-  const category = categories.find((c) => c.slug === params.slug);
+  const { slug } = await params;
+  const category = categories.find((c) => c.slug === slug);
 
   // FIX #2: THE CRITICAL RUNTIME FIX
   // If no category is found, call notFound() which throws an error and stops
