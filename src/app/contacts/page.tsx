@@ -42,7 +42,7 @@ export default function ContactsPage() {
             <Image src="/arvcovertwo.png" alt="Contact" fill className="object-cover object-center absolute inset-0 z-0 opacity-60" />
             <div className="relative z-10">
               <div className="text-white text-2xl font-bold mb-2 drop-shadow">Contact Information</div>
-              <div className="text-white mb-4 drop-shadow">Ready to start your next project? We're here to help!</div>
+              <div className="text-white mb-4 drop-shadow">Ready to start your next project? We&apos;re here to help!</div>
               <div className="flex flex-col gap-2 text-white text-sm">
                 <div className="flex items-center gap-2"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A2 2 0 0 0 7.48 19h9.04a2 2 0 0 0 1.83-1.3L21 13M7 13V6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v7" /></svg> +1 239 0310 1122</div>
                 <div className="flex items-center gap-2"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12H8m8 0a4 4 0 1 0-8 0 4 4 0 0 0 8 0z" /></svg>arvconstruction92@gmail.com</div>

@@ -18,7 +18,7 @@ export default function PropertiesPage() {
           Experience elegance and comfort with our exclusive luxury villas, designed for sophisticated living.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mb-16">
-          {categories.map((cat, idx) => (
+          {categories.map((cat) => (
             <Link key={cat.slug} href={`/categories/${cat.slug}`} className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden flex flex-col cursor-pointer">
               <div className="relative w-full h-48">
                 <Image src={cat.img} alt={cat.title} fill className="object-cover object-center" />
