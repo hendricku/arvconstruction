@@ -2,38 +2,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import categories from "../data/categories";
 
 const imageVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
-
-const categories = [
-  {
-    title: "New Regional Rehabilitation Center for Youth",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-    img: "/NewRegional.jpg",
-    slug: "new-regional-rehabilitation-center-for-youth",
-  },
-  {
-    title: "Convention Hall of BSP La Union Branch Office",
-    desc: "",
-    img: "/ConventionHall.jpg",
-    slug: "convention-hall-of-bsp-la-union-branch-office",
-  },
-  {
-    title: "Construction of Covered Court",
-    desc: "",
-    img: "/court.jpg",
-    slug: "construction-of-covered-court",
-  },
-  {
-    title: "Completion of Residential Care Facility",
-    desc: "",
-    img: "/ResidentialCare.jpg",
-    slug: "completion-of-residential-care-facility",
-  },
-];
 
 export default function CategoriesSection() {
   return (
@@ -58,9 +32,11 @@ export default function CategoriesSection() {
           <p className="text-gray-500 text-lg mb-4">
            lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsum loremm
           </p>
-          <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full w-fit transition mb-4">
-            View Properties
-          </button>
+          <Link href="/properties">
+            <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full w-fit transition mb-4">
+              View Properties
+            </button>
+          </Link>
           {/* Three small images below the button */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-2">
             {[1, 2, 3].map((i) => (
@@ -78,8 +54,15 @@ export default function CategoriesSection() {
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ delay: 0.3 + i * 0.15, duration: 0.7 }}
+                  whileHover={{ scale: 1.05, boxShadow: '0 0 0 4px #10B98133' }}
+                  whileFocus={{ scale: 1.05, boxShadow: '0 0 0 4px #10B98133' }}
                 >
                   <Image src={categories[i].img} alt={categories[i].title} width={200} height={200} className="w-full h-full object-cover" />
+                  {/* Tap indicator for mobile/tablet */}
+                  <div className="absolute bottom-2 right-2 sm:flex lg:hidden items-center gap-1 bg-emerald-600/90 text-white text-xs px-2 py-1 rounded-full shadow-md pointer-events-none select-none animate-bounce">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 19V6m0 0l-5 5m5-5l5 5" /></svg>
+                    Tap to view
+                  </div>
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-neutral-800/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4">
                     <div className="flex justify-end">
@@ -110,9 +93,16 @@ export default function CategoriesSection() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.75, duration: 0.7 }}
+            whileHover={{ scale: 1.03, boxShadow: '0 0 0 6px #10B98133' }}
+            whileFocus={{ scale: 1.03, boxShadow: '0 0 0 6px #10B98133' }}
           >
             <div className="rounded-2xl overflow-hidden w-full h-56 md:h-96 lg:h-[420px] group relative">
               <Image src={categories[0].img} alt={categories[0].title} width={600} height={400} className="w-full h-full object-cover" />
+              {/* Tap indicator for mobile/tablet */}
+              <div className="absolute bottom-2 right-2 sm:flex lg:hidden items-center gap-1 bg-emerald-600/90 text-white text-xs px-2 py-1 rounded-full shadow-md pointer-events-none select-none animate-bounce">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 19V6m0 0l-5 5m5-5l5 5" /></svg>
+                Tap to view
+              </div>
               {/* Overlay */}
               <div className="absolute inset-0 bg-neutral-800/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
                 <div className="flex justify-end">
