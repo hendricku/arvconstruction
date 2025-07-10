@@ -84,6 +84,7 @@ export default function Navbar() {
               <Link href="/properties" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>Properties</Link>
               <Link href="/#testimonials" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>Testimonials</Link>
               <Link href="/contacts" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>Contact</Link>
+              <Link href="/#faqs" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>FAQs</Link>
             </nav>
             <div className="mt-auto flex flex-col gap-4">
               <span className="text-gray-400 text-sm">Socials</span>

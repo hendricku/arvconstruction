@@ -1,4 +1,4 @@
-// Categories data for both client and server components
+
 const categories = [
   {
     slug: "new-regional-rehabilitation-center-for-youth",
