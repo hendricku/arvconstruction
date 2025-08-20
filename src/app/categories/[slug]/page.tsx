@@ -23,8 +23,14 @@ export async function generateStaticParams() {
   }));
 }
 
-// Corrected function signature is essential for the page to receive data correctly.
-export default function Page({ params }: { params: { slug: string } }) {
+type PageProps = {
+  params: {
+    slug: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default function Page({ params }: PageProps) {
   const { slug } = params;
   const category = categories.find((c) => c.slug === slug);
 
