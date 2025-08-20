@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 // Import the 'Variants' type from framer-motion
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Image from "next/image";
 
 const faqs = [
   {
@@ -72,14 +73,14 @@ export default function FAQSection() {
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <img src={images[0]} alt="FAQ visual 1" className="h-full w-full object-cover" />
+              <Image src={images[0]} alt="FAQ visual 1" width={400} height={300} className="h-full w-full object-cover" />
             </motion.div>
             <motion.div
               className="rounded-xl overflow-hidden shadow-lg"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <img src={images[2]} alt="FAQ visual 3" className="h-full w-full object-cover" />
+              <Image src={images[2]} alt="FAQ visual 3" width={400} height={300} className="h-full w-full object-cover" />
             </motion.div>
           </div>
           <div className="grid gap-4 mt-8">
@@ -88,14 +89,14 @@ export default function FAQSection() {
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <img src={images[1]} alt="FAQ visual 2" className="h-full w-full object-cover" />
+              <Image src={images[1]} alt="FAQ visual 2" width={400} height={300} className="h-full w-full object-cover" />
             </motion.div>
              <motion.div
               className="rounded-xl overflow-hidden shadow-lg"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <img src={images[3]} alt="FAQ visual 4" className="h-full w-full object-cover" />
+              <Image src={images[3]} alt="FAQ visual 4" width={400} height={300} className="h-full w-full object-cover" />
             </motion.div>
           </div>
         </motion.div>

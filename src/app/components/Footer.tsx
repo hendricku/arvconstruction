@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   return (

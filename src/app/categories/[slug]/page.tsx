@@ -114,7 +114,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 <IconQuote className="absolute -top-2 -left-2 w-20 h-20 text-white/10" />
                 <div className="relative z-10">
                     <p className="text-lg italic text-gray-300 mb-6">
-                      "{category.testimonial.text}"
+                      &ldquo;{category.testimonial.text}&rdquo;
                     </p>
                     <div className="flex items-center gap-4">
                       <Image src={category.testimonial.avatar} alt={category.testimonial.author} width={48} height={48} className="rounded-full" />
