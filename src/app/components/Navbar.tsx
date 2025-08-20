@@ -42,12 +42,12 @@ export default function Navbar() {
         {/* Navbar content */}
         <Link href="/" className="flex items-center gap-3 z-20 relative cursor-pointer">
           <Image src="/arvlogo.png" alt="Arvconstruction Logo" width={40} height={40} />
-          <span className={`text-2xl font-semibold hidden md:inline ${scrolled ? "text-gray-900" : "text-white"}`}>ARV Construction</span>
+          <span className={`text-2xl font-semibold hidden md:inline ${scrolled ? "text-gray-900" : "text-white"}`}>ARV CONSTRUCTION</span>
         </Link>
         <div className="flex items-center gap-8 z-20 relative">
           <div className={`flex items-center gap-2 text-lg hidden lg:flex ${scrolled ? "text-gray-900" : "text-white"}`}>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A2 2 0 0 0 7.48 19h9.04a2 2 0 0 0 1.83-1.3L21 13M7 13V6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v7" /></svg>
-            <span className="border-r border-gray-300 pr-4 mr-4">+1-212-456-7890</span>
+            <span className="border-r border-gray-300 pr-4 mr-4">+639270442529</span>
           </div>
           <button
             className={
@@ -82,7 +82,7 @@ export default function Navbar() {
             <nav className="flex flex-col gap-8 mt-20">
               <Link href="/" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>Home</Link>
               <Link href="/properties" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>Properties</Link>
-              <Link href="/#testimonials" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>Testimonials</Link>
+              <Link href="/#testimonials" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>Our Services</Link>
               <Link href="/contacts" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>Contact</Link>
               <Link href="/#faqs" className="text-3xl font-semibold hover:text-emerald-400 transition" onClick={() => setSidebarOpen(false)}>FAQs</Link>
             </nav>

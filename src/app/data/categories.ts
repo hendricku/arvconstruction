@@ -86,7 +86,8 @@ const categories = [
       { title: "Building Type", desc: "Academic Facility" },
       { title: "Institution", desc: "DMMMSU-ELUC" },
       { title: "Location", desc: "Naguilian, La Union" },
-    ],
+    ], 
+    
     longDesc: "This project covers the construction of a modern criminology building at DMMMSU-ELUC, designed to provide state-of-the-art facilities for criminology students. The building includes lecture halls, laboratories, faculty offices, and student spaces, supporting advanced learning and research in the field of criminology.",
     features: [
       "Lecture Halls",
