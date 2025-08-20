@@ -23,14 +23,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page({
-  params,
-}: {
-  params: { slug: string },
-  searchParams?: { [key: string]: string | string[] | undefined }
-}) {
-  const { slug } = params;
-  const category = categories.find((c) => c.slug === slug);
+export default function Page({ params }: { params: { slug: string } }) {
+  const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
     notFound();
