@@ -23,11 +23,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({
-  params,
-}: {
-  params: { slug: string }
-}) {
+// Define the type for the component's props
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function Page({ params }: PageProps) {
   const { slug } = params;
   const category = categories.find((c) => c.slug === slug);
 
