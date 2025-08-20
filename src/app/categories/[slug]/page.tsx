@@ -23,14 +23,11 @@ export async function generateStaticParams() {
   }));
 }
 
-type PageProps = {
-  params: {
-    slug: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
-export default function Page({ params }: PageProps) {
+export default async function Page({
+  params,
+}: {
+  params: { slug: string }
+}) {
   const { slug } = params;
   const category = categories.find((c) => c.slug === slug);
 
