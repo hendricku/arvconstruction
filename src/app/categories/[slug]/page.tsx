@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import BackButton from "../../components/BackButton";
 import categories from "../../data/categories";
+import { Metadata } from "next";
 
 // SVG Icons for a more custom feel. We define them here to keep it in one file.
 const IconCheck = (props: React.SVGProps<SVGSVGElement>) => (
@@ -23,7 +24,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
+type Props = {
+  params: { slug: string }
+}
+
+export default async function Page({ params }: Props) {
   const category = categories.find((c) => c.slug === params.slug);
 
   if (!category) {
