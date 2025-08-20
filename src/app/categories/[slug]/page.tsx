@@ -26,7 +26,8 @@ export async function generateStaticParams() {
 export default function Page({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string },
+  searchParams?: { [key: string]: string | string[] | undefined }
 }) {
   const { slug } = params;
   const category = categories.find((c) => c.slug === slug);
